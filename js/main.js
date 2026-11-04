@@ -61,6 +61,14 @@ const Juego = (() => {
     UI.bloquearEntrada();
   }
 
+  /* Comandos de texto: globales o ligados a una estancia y un objeto. */
+  function comandoTexto(verbo, arg) {
+    const c = Datos.comandosTexto.find(c => c.verbos.includes(verbo) && (!c.objetos || c.objetos.includes(sinArticulo(arg))));
+    if (!c) return false;
+    UI.log(c.estancia && c.estancia !== estado.estancia ? c.fuera : c.texto);
+    return true;
+  }
+
   function ayuda() {
     UI.log('Comandos: «ir a [estancia]», «examinar [objeto]», «abrir móvil», «abrir ordenador», «cerrar», «hacer foto [objeto]», «enviar foto», «llamar a la policía».');
   }
@@ -82,6 +90,7 @@ const Juego = (() => {
     if (verbo === 'ayuda') return ayuda();
     if ((verbo === 'hacer' || verbo === 'sacar') && /^foto/.test(arg)) return Ordenes.hacerFoto(sinArticulo(arg.replace(/^foto\s*/, '')));
     if (verbo === 'enviar' && /^foto/.test(arg)) return Ordenes.enviarFoto();
+    if (comandoTexto(verbo, arg)) return;
     if (!Ordenes.responder(cmd)) UI.log('No entiendo ese comando.');
   }
 
