@@ -34,6 +34,15 @@ const Datos = {
     { verbos: ['meter', 'meterse','introducir','introducirse'], estancia: 'bano', objetos: ['inodoro', 'taza', 'wc'], texto: 'Vas tan salida que decides meterte la taza' },
     { verbos: ['limpiar', 'limpia'], estancia: 'bano', objetos: ['inodoro', 'taza', 'wc'], texto: 'Te pones de rodillas y limpias el borde de la taza.', fuera: 'No ves ningún inodoro por aquí.' }
   ],
+  /* Puzzle de ajedrez. `soluciones`: jugadas ganadoras en minúsculas, «origen destino». */
+  ajedrez: {
+    imagen: 'img/tablero.png',
+    soluciones: ['c5 f2'],
+    descripcion: 'Una partida de ajedrez a medias. Puedes ganar con un solo movimiento. Escribe la jugada con la casilla de origen y la de destino, por ejemplo «A2 B3».',
+    fallo: 'Ese movimiento no te da la victoria. Devuelves las piezas a su sitio.',
+    exito: 'Mueves la pieza y la partida queda ganada. Al apoyar la mano en el mueble, el tablero cojea: hay algo debajo. Lo levantas y encuentras una llave.',
+    yaResuelto: 'Ya has ganado esta partida.'
+  },
   verduras: ['zanahorias', 'judías verdes', 'tomates', 'un pimiento rojo'],
   /* Un final por cada valor del contador (0-4) y el de las consecuencias (5). */
   finales: [
