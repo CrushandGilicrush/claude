@@ -12,6 +12,15 @@ const UI = (() => {
     t.scrollTop = t.scrollHeight;
   }
 
+  function logImagen(src) {
+    const t = $('terminal'), e = document.createElement('div');
+    e.className = 'mb-2';
+    e.innerHTML = `<img src="${src}" alt="Imagen" class="max-h-72 rounded border border-retro-border">`;
+    e.firstChild.onload = () => { t.scrollTop = t.scrollHeight; };
+    t.appendChild(e);
+    t.scrollTop = t.scrollHeight;
+  }
+
   function vista(titulo, imagen, bloqueado = false) {
     $('room-title').innerText = titulo;
     $('room-bg').style.backgroundImage = `url('${imagen}')`;
@@ -31,5 +40,5 @@ const UI = (() => {
 
   function bloquearEntrada() { $('command-input').disabled = true; $('btn-ejecutar').disabled = true; }
 
-  return { log, vista, contador, inventario, bloquearEntrada, $ };
+  return { log, logImagen, vista, contador, inventario, bloquearEntrada, $ };
 })();

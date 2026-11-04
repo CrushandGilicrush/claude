@@ -24,6 +24,7 @@ const Juego = (() => {
     const clave = Datos.alias[nombre] || nombre;
     const desc = Datos.objetos[estado.estancia][clave];
     if (desc === undefined) return UI.log('No ves nada parecido por aquí.');
+    if (clave === 'tablero') return Ajedrez.examinar();
     if (clave === 'nevera') return Ordenes.examinarNevera();
     if (clave === 'caldera') return Ordenes.examinarCaldera();
     UI.log(desc);
@@ -80,6 +81,7 @@ const Juego = (() => {
     if (estado.esperandoCodigo) return comprobarCodigo(cmd);
     const ajuste = cmd.match(/^([+-])\s*(\d+)\s*[º°]?\s*c?$/);
     if (ajuste) return Ordenes.ajustar(ajuste[1], parseInt(ajuste[2], 10));
+    if (Ajedrez.mover(cmd)) return;
     const [verbo, ...resto] = cmd.split(' ');
     const arg = resto.join(' ');
     if (verbo === 'ir') return ir(arg);
