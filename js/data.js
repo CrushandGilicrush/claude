@@ -30,6 +30,8 @@ const Datos = {
   comandosTexto: [
     { verbos: ['bostezar', 'bosteza'], texto: 'Te llevas la mano a la boca y bostezas. Esta situación, más que inquietarte, te da sueño.' },
     { verbos: ['gritar', 'grita'], texto: 'Gritas de impotencia, pero nadie parece oírte (o quizá sí).' },
+     { verbos: ['masturbar', 'masturbarse'], texto: 'Sientes el deseo de acariciarte. Metes la mano por debajo de las bragas y te tocas. Sientes la humedad en la mano.' },
+    { verbos: ['meter', 'meterse','introducir','introducirse'], estancia: 'bano', objetos: ['inodoro', 'taza', 'wc'], texto: 'Vas tan salida que decides meterte la taza' },
     { verbos: ['limpiar', 'limpia'], estancia: 'bano', objetos: ['inodoro', 'taza', 'wc'], texto: 'Te pones de rodillas y limpias el borde de la taza.', fuera: 'No ves ningún inodoro por aquí.' }
   ],
   verduras: ['zanahorias', 'judías verdes', 'tomates', 'un pimiento rojo'],
