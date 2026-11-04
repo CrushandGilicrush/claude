@@ -25,6 +25,13 @@ const Datos = {
     terraza: { macetas: 'Macetas con plantas algo secas.', tumbona: 'Una tumbona cómoda, al sol.' }
   },
   alias: { radiadores: 'radiador', juegos: 'juegos de mesa', maceta: 'macetas', pc: 'ordenador' },
+  /* Comandos con respuesta de texto. Sin `estancia`/`objetos`: funcionan en cualquier lugar.
+     Con ellos: solo funcionan en esa estancia y nombrando uno de sus objetos. */
+  comandosTexto: [
+    { verbos: ['bostezar', 'bosteza'], texto: 'Te llevas la mano a la boca y bostezas. Esta situación, más que inquietarte, te da sueño.' },
+    { verbos: ['gritar', 'grita'], texto: 'Gritas de impotencia, pero nadie parece oírte (o quizá sí).' },
+    { verbos: ['limpiar', 'limpia'], estancia: 'bano', objetos: ['inodoro', 'taza', 'wc'], texto: 'Te pones de rodillas y limpias el borde de la taza.', fuera: 'No ves ningún inodoro por aquí.' }
+  ],
   verduras: ['zanahorias', 'judías verdes', 'tomates', 'un pimiento rojo'],
   /* Un final por cada valor del contador (0-4) y el de las consecuencias (5). */
   finales: [
